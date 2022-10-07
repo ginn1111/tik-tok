@@ -4,6 +4,7 @@
   align-items: center;
 
   .container {
+    padding-inline: var(--default-header-container-spacer);
     width: var(--default-layout-width, 1150px);
     display: flex;
   }

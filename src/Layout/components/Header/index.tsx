@@ -1,6 +1,3 @@
-import { useEffect, useState } from 'react';
-import styles from './Header.module.scss';
-import images from '../../../assets/imgs';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Tippy from '@tippyjs/react/headless';
@@ -11,13 +8,97 @@ import {
   faSpinner,
   faSearch,
   faPlus,
+  faEllipsisVertical,
 } from '@fortawesome/free-solid-svg-icons';
+
 import { Wrapper as PopperWrapper } from '../../../components/Popper';
 import AccountItem from '../../../components/AccountItem';
 import Button from '../../../components/Button';
+import Menu from '../../../components/Popper/Menu';
+import styles from './Header.module.scss';
+import images from '../../../assets/imgs';
+
+// Type
+import type { MenuItemProps } from '../../../components/Popper/Menu';
+
+const MENU_DUM: MenuItemProps[] = [
+  {
+    icon: require('../../../assets/icons/lang-icon.svg').default,
+    title: 'English',
+    children: {
+      title: 'Language',
+      data: [
+        {
+          code: 'en',
+          title: 'English',
+        },
+        {
+          code: 'vi',
+          title: 'Tiếng Việt',
+          children: {
+            title: 'Tiếng Việt',
+            data: [
+              {
+                code: 'en',
+                title: 'English',
+              },
+              {
+                code: 'vi',
+                title: 'Tiếng Việt',
+              },
+              {
+                code: 'vi',
+                title: 'Tiếng Việt',
+              },
+              {
+                code: 'vi',
+                title: 'Tiếng Việt',
+              },
+              {
+                code: 'vi',
+                title: 'Tiếng Việt',
+              },
+              {
+                code: 'vi',
+                title: 'Tiếng Việt',
+              },
+              {
+                code: 'vi',
+                title: 'Tiếng Việt',
+              },
+              {
+                code: 'vi',
+                title: 'Tiếng Việt',
+              },
+              {
+                code: 'vi',
+                title: 'Tiếng Việt',
+              },
+              {
+                code: 'vi',
+                title: 'Tiếng Việt',
+              },
+            ],
+          },
+        },
+      ],
+    },
+  },
+  {
+    icon: require('../../../assets/icons/feed-back-icon.svg').default,
+    title: 'Feedback and Help',
+    url: '/feedback',
+  },
+  {
+    icon: require('../../../assets/icons/keyboard-icon.svg').default,
+    title: 'Keyboard Shortcuts',
+  },
+];
 
 const Header = () => {
-  const [accounts, setAccounts] = useState<string[]>([]);
+  function menuItemChangeHandler(item: MenuItemProps) {
+    console.log({ item });
+  }
 
   return (
     <header className={styles.wrapper}>
@@ -27,10 +108,8 @@ const Header = () => {
         </Link>
         <div>
           <Tippy
-            // Edit here
             placement="bottom-start"
             interactive
-            visible={true}
             render={() => {
               return (
                 <div
@@ -72,19 +151,18 @@ const Header = () => {
           <Button
             type="outline"
             leftIcon={<FontAwesomeIcon icon={faPlus as IconProp} />}
-            onClick={() => console.log('click')}
           >
-            Login
+            Upload
           </Button>
-          <Button href="https://google.com" target="_blank">
-            Login
-          </Button>
-          <Button type="rounded" size="small">
-            Login
-          </Button>
-          <Button type="outline-primary" size="small" disabled>
-            Login
-          </Button>
+          <Button>Login</Button>
+          <Menu menuItems={MENU_DUM} onChange={menuItemChangeHandler}>
+            <button className={styles.menuBtn}>
+              <FontAwesomeIcon
+                icon={faEllipsisVertical as IconProp}
+                className={styles.menuIcon}
+              />
+            </button>
+          </Menu>
         </div>
       </div>
     </header>

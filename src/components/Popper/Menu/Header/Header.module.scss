@@ -1,0 +1,20 @@
+.header {
+  height: 50px;
+  margin-top: -8px;
+  position: relative;
+  flex-shrink: 0;
+}
+.iconBtn {
+  height: 100%;
+  width: 50px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}

@@ -14,6 +14,7 @@
   justify-content: center;
 }
 .container {
+  padding-inline: var(--default-header-container-spacer);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -107,4 +108,16 @@
 .actions {
   display: flex;
   align-items: center;
+}
+.menuIcon {
+  height: 50%;
+}
+.menuBtn {
+  padding-inline: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  align-self: stretch;
+  margin-left: 16px;
 }
