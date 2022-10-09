@@ -1,5 +1,4 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap');
 :root {
   --primary: #fe2c55;
   --default-layout-height: 60px;
@@ -15,6 +14,25 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+@font-face {
+  font-family: ProximaNova;
+  src: url('../../assets/fonts/Proxima-Nova-Bold.woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: ProximaNova;
+  src: url('../../assets/fonts/Proxima-Nova-Regular.woff2');
+  font-weight: 400;
+}
+@font-face {
+  font-family: ProximaNova;
+  src: url('../../assets/fonts/ProximaNova-Semibold.woff2');
+  font-weight: 700;
+}
+@font-face {
+  font-family: sofiapro;
+  src: url('../../assets/fonts/sofiapro-bold.woff2');
 }
 html {
   font-size: 62.5%;
@@ -37,11 +55,31 @@ section,
 option,
 button,
 label {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'ProximaNova', sans-serif;
 }
 body {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'ProximaNova', sans-serif;
   font-size: 1.6rem;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+}
+
+// Tippy Customize
+.tippy-box {
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  background-color: rgba(84, 84, 84, 0.92);
+  color: rgb(255, 255, 255);
+  padding: 4px;
+  transition-property: transform, visibility, opacity;
+
+  .tippy-box[data-placement^='bottom'] > .tippy-arrow {
+    top: 1px;
+  }
+
+  .tippy-arrow {
+    color: rgba(84, 84, 84, 0.92);
+  }
 }

@@ -12,6 +12,7 @@ export interface MenuItemProps {
   url?: string;
   children?: { title: string; data: { [index: string]: any } };
   onClick?: () => void;
+  separate?: boolean;
 }
 
 interface MenuProps {

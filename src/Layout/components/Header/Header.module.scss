@@ -109,6 +109,26 @@
   display: flex;
   align-items: center;
 }
+.actionItem {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  outline: none;
+  font-weight: 400;
+  margin-left: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 26px;
+    aspect-ratio: 1;
+  }
+  .inBoxIcon {
+    width: 32px;
+  }
+}
 .menuIcon {
   height: 50%;
 }
@@ -120,4 +140,9 @@
   background-color: transparent;
   align-self: stretch;
   margin-left: 16px;
+}
+.avatar {
+  height: 32px;
+  aspect-ratio: 1;
+  margin-left: 24px;
 }
